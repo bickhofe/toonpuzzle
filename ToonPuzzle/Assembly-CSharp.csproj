@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\CreateTiles.cs" />
+     <Compile Include="Assets\Scripts\TestScript.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>K:/Program Files/Unity 5.4.0b2/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
