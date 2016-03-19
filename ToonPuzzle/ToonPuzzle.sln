@@ -1,6 +1,8 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
+Project("{7EF6D332-BBEB-D168-4EB1-A12F0058BFA1}") = "ToonPuzzle", "Assembly-CSharp-firstpass.csproj", "{9A0349FC-B499-3260-F427-C8C050A3AC34}"
+EndProject
 Project("{7EF6D332-BBEB-D168-4EB1-A12F0058BFA1}") = "ToonPuzzle", "Assembly-CSharp.csproj", "{44E3D6B8-018D-6B38-9043-D1CB09861B72}"
 EndProject
 Global
@@ -9,6 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9A0349FC-B499-3260-F427-C8C050A3AC34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A0349FC-B499-3260-F427-C8C050A3AC34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A0349FC-B499-3260-F427-C8C050A3AC34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A0349FC-B499-3260-F427-C8C050A3AC34}.Release|Any CPU.Build.0 = Release|Any CPU
 		{44E3D6B8-018D-6B38-9043-D1CB09861B72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{44E3D6B8-018D-6B38-9043-D1CB09861B72}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44E3D6B8-018D-6B38-9043-D1CB09861B72}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -17,7 +23,8 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
+																									GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
+
 EndGlobal
