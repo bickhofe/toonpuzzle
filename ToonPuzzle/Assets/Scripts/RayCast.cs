@@ -8,10 +8,11 @@ public class RayCast : MonoBehaviour {
 	GameObject curButton;
 	RaycastHit hit;
 	float time = 0;
+	public float focusTime;
 
 	// Use this for initialization
 	void Start () {
-		TilesScript = GetComponent<CreateTiles> ();
+		TilesScript = transform.parent.GetComponent<CreateTiles> ();
 	}
 
 	void FixedUpdate() 
@@ -35,7 +36,7 @@ public class RayCast : MonoBehaviour {
 		time += Time.deltaTime;
 		curButton.transform.localScale = new Vector3(.75f,.75f,.75f);
 		//delay
-		if (time > 3) {
+		if (time > focusTime) {
 			curButton.transform.localScale = new Vector3(.5f,.5f,.5f);
 			TilesScript.CreateTile (row, col);
 			time = 0;

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class CreateTiles : MonoBehaviour {
 
 	public int maxTiles;
+	public GameObject VRcam;
 	public GameObject[] Tiles;
 	public GameObject Container;
 	public GameObject Buttons;
@@ -16,6 +17,7 @@ public class CreateTiles : MonoBehaviour {
 	public List<Vector2> tilePos = new List<Vector2>();
 
 	void Start () {
+		VRcam = GameObject.Find ("VRcam");
 		Buttons = GameObject.Find ("Buttons");
 		Container = GameObject.Find ("PuzzleContainer");
 		CreateTile (0,0);
@@ -26,7 +28,8 @@ public class CreateTiles : MonoBehaviour {
 	}
 
 	void AdjustCam(){
-		transform.position = new Vector3 (transform.rotation.y*20, transform.rotation.x*-10, -5);
+		transform.position = new Vector3 (VRcam.transform.rotation.y*10, VRcam.transform.rotation.x*-5, -5);
+		//transform.eulerAngles = new Vector3 (0, 0, VRcam.transform.rotation.z*50);
 	}
 
 	void ShowHideButtons(){
