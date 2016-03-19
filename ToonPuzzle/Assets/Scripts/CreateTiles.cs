@@ -28,7 +28,7 @@ public class CreateTiles : MonoBehaviour {
 	}
 
 	void AdjustCam(){
-		transform.position = new Vector3 (VRcam.transform.rotation.y*10, VRcam.transform.rotation.x*-5, -5);
+		transform.position = new Vector3 (VRcam.transform.rotation.y*-5, VRcam.transform.rotation.x*5, -5);
 		//transform.eulerAngles = new Vector3 (0, 0, VRcam.transform.rotation.z*50);
 	}
 
