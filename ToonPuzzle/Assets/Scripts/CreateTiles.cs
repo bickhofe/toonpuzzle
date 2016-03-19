@@ -32,17 +32,7 @@ public class CreateTiles : MonoBehaviour {
 		//transform.eulerAngles = new Vector3 (0, 0, VRcam.transform.rotation.z*50);
 	}
 
-	void ShowHideButtons(){
-		//toggle buttons visibility
-		if (Buttons.activeSelf) Buttons.SetActive (false);
-		else Buttons.SetActive (true);
-	}
-
 	public void CreateTile(int rowVal,int colVal) {
-		Vector2 pos = new Vector2(row,col);
-		tilePos.Add(pos);
-		print (tilePos);
-
 		row += rowVal;
 		col += colVal;
 		//print ("row: " + row + " " + "col: " + col);
@@ -51,6 +41,21 @@ public class CreateTiles : MonoBehaviour {
 		myTile.transform.parent = Container.transform;
 		//Container.transform.position = new Vector3(row*-offset, col*-offset, 0);
 		iTween.MoveTo(Container,iTween.Hash("position",new Vector3(row*-xOffset, col*-yOffset, 0),"time",1,"delay",0,"easetype",iTween.EaseType.easeInOutSine));	
-		//ShowHideButtons ();
+
+		Vector2 pos = new Vector2(row,col);
+		tilePos.Add(pos);
+
+		CheckButtonNav();
+	}
+
+	void CheckButtonNav(){
+		for (int i=0; i<tilePos.Count; i++){
+			// in zwei schleifen druchsuchen
+			if (tilePos[i].x == row-1) print("left found!");
+			else if (tilePos[i].x == row+1) print("right found!");
+
+			if (tilePos[i].y == col+1) print("top found!");
+			else if (tilePos[i].y == col-1) print("bottom found!"); 
+		}
 	}
 }
