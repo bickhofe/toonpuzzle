@@ -9,6 +9,7 @@ public class CreateTiles : MonoBehaviour {
 	public GameObject[] Tiles;
 	public GameObject Container;
 	public GameObject Buttons;
+	public GameObject[] PlusButtons; // clockwise from top
 	public int row = 0;
 	public int col = 0;
 	float xOffset = 6.1f;
@@ -28,8 +29,9 @@ public class CreateTiles : MonoBehaviour {
 	}
 
 	void AdjustCam(){
-		transform.position = new Vector3 (VRcam.transform.rotation.y*-5, VRcam.transform.rotation.x*5, -5);
-		//transform.eulerAngles = new Vector3 (0, 0, VRcam.transform.rotation.z*50);
+
+		transform.position = new Vector3 (VRcam.transform.rotation.y*5, VRcam.transform.rotation.x*-5, -5);
+		//transform.eulerAngles = new Vector3 (0, 0, VRcam.transform.rotation.z*50); <- motionsickness alarm!
 	}
 
 	public void CreateTile(int rowVal,int colVal) {
@@ -49,13 +51,25 @@ public class CreateTiles : MonoBehaviour {
 	}
 
 	void CheckButtonNav(){
-		for (int i=0; i<tilePos.Count; i++){
-			// in zwei schleifen druchsuchen
-			if (tilePos[i].x == row-1) print("left found!");
-			else if (tilePos[i].x == row+1) print("right found!");
+		//reset buttons
+		for (int i=0; i<PlusButtons.Length; i++) {
+			PlusButtons[i].SetActive(true);
+		}
 
-			if (tilePos[i].y == col+1) print("top found!");
-			else if (tilePos[i].y == col-1) print("bottom found!"); 
+        
+		for (int i=0; i<tilePos.Count; i++){
+           
+            // left right in column
+            if (col == tilePos[i].y){
+				if (tilePos[i].x == row-1) PlusButtons[3].SetActive(false);
+				else if (tilePos[i].x == row+1) PlusButtons[1].SetActive(false);
+			}
+
+            // top bottom in row
+            if (row == tilePos[i].x){
+				if (tilePos[i].y == col+1) PlusButtons[0].SetActive(false);
+				else if (tilePos[i].y == col-1) PlusButtons[2].SetActive(false);
+			}
 		}
 	}
 }
