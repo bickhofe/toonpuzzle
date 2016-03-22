@@ -493,7 +493,11 @@ MonoBehaviour:
   - {fileID: 194758, guid: aa0ee4442628fb1459258584c3ca772b, type: 2}
   Container: {fileID: 0}
   Buttons: {fileID: 0}
-  PlusButtons: []
+  PlusButtons:
+  - {fileID: 2146587500}
+  - {fileID: 2058728955}
+  - {fileID: 680206132}
+  - {fileID: 97331919}
   row: 0
   col: 0
   tilePos: []
